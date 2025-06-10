@@ -111,7 +111,7 @@ const Candidates = () => {
         </div>
 
         {/* Sub Header */}
-        <div className="bg-white p-6 rounded-lg shadow border border-gray-200">
+        <div className="bg-white p-3 lg:p-6 rounded-lg shadow border border-gray-200">
           <div className="mb-8">
             <h1 className="text-2xl font-bold text-gray-900 mb-2">
               Candidate Submissions Review Panel
@@ -127,7 +127,7 @@ const Candidates = () => {
             {candidates.map((candidate) => (
               <div
                 key={candidate.id}
-                className="bg-white rounded-lg shadow-sm border border-gray-200 p-6"
+                className="bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-6"
               >
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">

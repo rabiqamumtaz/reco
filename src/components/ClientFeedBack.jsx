@@ -74,7 +74,7 @@ const ClientFeedBack = () => {
         </div>
 
         {/* Feedback Panel */}
-        <div className="bg-white p-6 rounded-lg shadow border border-gray-200">
+        <div className="bg-white p-3 lg:p-6 rounded-lg shadow border border-gray-200">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold text-gray-900">
               Client Feedback Management
@@ -89,7 +89,7 @@ const ClientFeedBack = () => {
             {feedbacks.map((item) => (
               <div
                 key={item.id}
-                className="border border-gray-200 rounded-lg p-6 bg-white shadow-sm"
+                className="border border-gray-200 rounded-lg p-3 lg:p-6 bg-white shadow-sm"
               >
                 {/* Header Row */}
                 <div className="flex flex-col sm:flex-row justify-between gap-4 items-start sm:items-center">
