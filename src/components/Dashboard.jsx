@@ -1,11 +1,10 @@
-import React from "react";
 import {
   FileText,
   Clock,
   Users,
   MessageSquare,
-  Plus,
   Download,
+  Eye,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -100,12 +99,6 @@ const Dashboard = () => {
             <h1 className="text-2xl font-bold text-gray-900">
               Account Manager Dashboard
             </h1>
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-              <button className="flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                <Download className="w-4 h-4" />
-                <span>Export</span>
-              </button>
-            </div>
           </div>
           <p className="text-gray-600 text-sm sm:text-base">
             Manage job requirements and candidate submissions efficiently
@@ -113,6 +106,7 @@ const Dashboard = () => {
         </div>
 
         {/* Stats Grid */}
+
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-6">
           {stats.map((stat, i) => {
             const Icon = stat.icon;
@@ -141,7 +135,7 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
           {/* Recent Jobs */}
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="p-6 border-gray-100">
+            <div className="p-3 lg:p-6 border-gray-100">
               <h2 className="text-xl font-semibold text-gray-900 mb-1">
                 Recent Job Requirements
               </h2>
@@ -149,11 +143,11 @@ const Dashboard = () => {
                 Latest job postings requiring attention
               </p>
             </div>
-            <div className="p-6 space-y-4">
+            <div className="p-3 lg:p-6 space-y-4">
               {recentJobs.map((job) => (
                 <div
                   key={job.id}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors "
                 >
                   <div className="flex-1 mb-3 sm:mb-0">
                     <h3 className="font-semibold text-gray-900 mb-1">
@@ -170,7 +164,8 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <Link to="/job-requirements">
-                    <button className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors w-full sm:w-auto text-center">
+                    <button className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-gray-900 bg-white hover:bg-gray-50 rounded-lg transition-all duration-200 ease-in-out border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md w-40 sm:w-auto text-start">
+                      <Eye className="w-4 h-4 text-gray-500 hover:text-gray-700" />
                       View
                     </button>
                   </Link>
@@ -181,7 +176,7 @@ const Dashboard = () => {
 
           {/* Top Candidates */}
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="p-6  border-gray-100">
+            <div className="p-3 lg:p-6  border-gray-100">
               <h2 className="text-xl font-semibold text-gray-900 mb-1">
                 Top Candidates
               </h2>
@@ -189,11 +184,11 @@ const Dashboard = () => {
                 Highest scoring candidates this week
               </p>
             </div>
-            <div className="p-6 space-y-4">
+            <div className="p-3 lg:p-6 space-y-4">
               {topCandidates.map((c) => (
                 <div
                   key={c.id}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors gap-4 sm:gap-6"
                 >
                   <div className="flex-1 mb-3 sm:mb-0">
                     <h3 className="font-semibold text-gray-900 mb-1">
@@ -213,7 +208,8 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <Link to="/candidate">
-                    <button className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors w-full sm:w-auto text-center">
+                    <button className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-gray-900 bg-white hover:bg-gray-50 rounded-lg transition-all duration-200 ease-in-out border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md w-40 sm:w-auto text-start">
+                      <Eye className="w-4 h-4 text-gray-500 hover:text-gray-700" />
                       Review
                     </button>
                   </Link>

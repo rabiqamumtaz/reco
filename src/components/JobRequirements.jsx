@@ -140,31 +140,9 @@ const JobRequirements = () => {
   return (
     <div className="min-h-screen w-full bg-gray-50 py-6  transition-all duration-300 ">
       <div className="max-w-screen-2xl mx-auto px-4  md:mt-0  sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-8 ">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-2">
-            <h1 className="text-2xl font-bold text-gray-900">
-              Account Manager Dashboard
-            </h1>
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-              <button className="flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                <Download className="w-4 h-4" />
-                <span>Export</span>
-              </button>
-              {/* <button className="flex items-center justify-center space-x-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
-                <Plus className="w-4 h-4" />
-                <span>New Job</span>
-              </button> */}
-            </div>
-          </div>
-          <p className="text-gray-600 text-sm sm:text-base">
-            Manage job requirements and candidate submissions efficiently
-          </p>
-        </div>
-
         {/* Filters */}
         <div className="bg-white rounded-lg shadow-sm">
-          <div className="p-4 sm:p-6 border-gray-200">
+          <div className="p-3 lg:p-4 sm:p-6 border-gray-200">
             <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
               <div>
                 <h2 className="text-lg font-semibold text-gray-900">
@@ -219,7 +197,7 @@ const JobRequirements = () => {
           </div>
 
           {/* Job Listings */}
-          <div className="p-4 space-y-6">
+          <div className="p-3 lg:p-4 space-y-6">
             {jobs.map((job) => (
               <div
                 key={job.id}
@@ -227,16 +205,18 @@ const JobRequirements = () => {
               >
                 <div className="flex flex-col md:flex-row justify-between gap-6">
                   <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                    <div className="flex flex-wrap items-center gap-5 mb-3">
                       <h3 className="text-lg font-semibold text-gray-900">
                         {job.title}
                       </h3>
-                      <span className={getStatusBadge(job.status)}>
-                        {job.status}
-                      </span>
-                      <span className={getPriorityBadge(job.priority)}>
-                        {job.priority}
-                      </span>
+                      <div className="flex gap-4">
+                        <span className={getStatusBadge(job.status)}>
+                          {job.status}
+                        </span>
+                        <span className={getPriorityBadge(job.priority)}>
+                          {job.priority}
+                        </span>
+                      </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4 text-gray-600 text-sm">
@@ -269,7 +249,7 @@ const JobRequirements = () => {
                   </div>
 
                   {/* Actions */}
-                  {/* Action Icons in Top-Right Corner */}
+
                   <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 flex flex-col sm:flex-row items-end sm:items-center gap-2 sm:gap-3">
                     {job.status === "Pending" && (
                       <>
@@ -300,9 +280,7 @@ const JobRequirements = () => {
                       title="View Details"
                     />
                     <Edit
-                      onClick={() => {
-                        // Add edit logic here
-                      }}
+                      onClick={() => {}}
                       className="w-5 h-5 text-gray-700 cursor-pointer hover:scale-110 transition-transform"
                       title="Edit"
                     />
@@ -314,7 +292,6 @@ const JobRequirements = () => {
         </div>
 
         {/* Modals */}
-        {/* Keep your modals as they are, or apply overflow fixes for mobile */}
 
         {modalJob && (
           <CustomModal
@@ -463,8 +440,8 @@ const JobRequirements = () => {
                   color="primary"
                   startIcon={<Edit />}
                   onClick={() => {
-                    setProfileModalOpen(false); // Close profile modal
-                    setScreeningModalOpen(true); // Open screening form modal
+                    setProfileModalOpen(false);
+                    setScreeningModalOpen(true);
                   }}
                 >
                   Start Screening
@@ -551,7 +528,6 @@ const JobRequirements = () => {
                 variant="contained"
                 color="primary"
                 onClick={() => {
-                  // You can add form submission logic here
                   alert("Screening submitted");
                   setScreeningModalOpen(false);
                 }}

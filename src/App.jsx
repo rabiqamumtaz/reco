@@ -53,7 +53,7 @@ function App() {
               <span className="hidden sm:inline font-medium">Logout</span>
             </button>
           </div>
-          <div className="p-4">
+          <div className=" lg:p-4">
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />
